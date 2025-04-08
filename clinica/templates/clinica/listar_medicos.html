@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Médicos</title>
+</head>
+<body>
+    <h1>Listagem de Médicos Cadastrados</h1>
+
+    <div>
+        <h2>filtro de especialidade</h2>
+        <form method="post">
+            {% csrf_token %}
+            <input placeholder="filtre por especialidade" name="especialidade_filtro" id="especialidade_filtro">
+
+            <button type="submit">Filtrar</button>
+        </form>
+        <h3>Medicos encontrados por filtragem</h3>
+        <ul>
+            {% for i in medico %}
+            <li>
+                <h2>{{i.nome}}</h2>
+                <p>{{i.crm}}</p>
+                <p>{{i.especialidade}}</p>
+                <p>{{i.email}}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <h2>Medicos Cadastrados</h2>
+    <ul>
+        {% for i in medicos %}
+        <li>
+            <h2>{{i.nome}}</h2>
+            <p>{{i.crm}}</p>
+            <p>{{i.especialidade}}</p>
+            <p>{{i.email}}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
