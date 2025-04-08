@@ -33,27 +33,6 @@ def agendamentos(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-
-
-# @api_view(['POST'])
-# def create_servico(request):
-#     if request.method == 'POST':
-#         serializer = ServicoSerializer(data=request.data, many=isinstance(request.data, list))
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
-
-# @api_view(['POST'])
-# def create_agendamento(request):
-#     if request.method == 'POST':
-#         serializer = AgendamentoSerializer(data=request.data, many=isinstance(request.data, list))
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
 @api_view(['GET'])
 def pegar_servico(request, pk):
     try:

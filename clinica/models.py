@@ -8,7 +8,7 @@ class Medico(models.Model):
     escolhas_especialidade = (
         ('ORTOPEDIA', 'Ortopedia'),
         ('DERMATOLOGIA', 'Dermatologia'), 
-        ('CARDIOLOGIA', 'CAR'), 
+        ('CAR', 'CAR'), 
         ('OFTALMOLOGIA', 'Oftalmologia'),
     )
     especialidade = models.CharField(max_length=20, choices=escolhas_especialidade)
