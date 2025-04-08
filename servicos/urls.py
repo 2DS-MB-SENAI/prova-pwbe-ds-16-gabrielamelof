@@ -21,4 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('clinica.urls')), 
     path('', include('agenda.urls')), 
+    path('', include('custom_auth.urls')), 
+    
 ]
